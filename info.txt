@@ -1,0 +1,11 @@
+{
+	"Name": "Cookie Flavored Cookies",
+	"ID": "cookieFlavoredCookies",
+	"Author": "Mistyk__",
+	"Description": "A fun mod that adds some fun things.",
+	"ModVersion": 1.0,
+	"GameVersion": 2.053,
+	"Date": "05/05/2025",
+	"Dependencies": ["CCSE"],
+	"Disabled": 1
+}
