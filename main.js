@@ -24,10 +24,14 @@ CFC.launch = function() {
 			Game.Notify('a', 'a', [25, 12], 6);
 		};*/
 
+		CFC.buildings = [ 'Cursor', 'Grandma', 'Farm', 'Mine', 'Factory', 'Bank', 'Temple', 'Wizard tower', 'Shipment', 'Alchemy lab', 'Portal', 'Time machine', 'Antimatter condenser', 'Prism', 'Chancemaker', 'Fractal engine', 'Javascript console', 'Idleverse', 'Cortex baker', 'You', ]
+		CFC.autoBuyBuildings = []
+		CFC.autoBuyTime = 10
+
 		CFC.NewAutoBuyBuilding = function(obj)
 		{
-			var building = Game.Objects[obj.building];
-			var upgrade = CCSE.NewHeavenlyUpgrade(
+			let building = Game.Objects[obj.building];
+			let upgrade = CCSE.NewHeavenlyUpgrade(
 				obj.name,
 				parseLoc("When possible, buy%1 <b>%2</b> every 10 seconds.", [(obj.building == 'You' ? '' : ' a'), cap(obj.building)]) + (EN?'<q>'+obj.q+'</q>':''),
 				Math.pow(building.id+1,7.1) * 15000000,
@@ -35,7 +39,10 @@ CFC.launch = function() {
 				750 - Math.sin((building.id+1)*0.23+2.3) * 600,
 				200 + Math.cos((building.id+1)*0.23+2.3) * 600,
 				obj.building == 'Cursor' ? ['Unshackled ' + building.bplural] : ['Unshackled ' + building.bplural, Game.ObjectsById[building.id-1].autoBuyUpgrade],
-				() => {}
+				function() {
+					let building = CFC.buildings[CFC.autoBuyBuildings.length]
+					CFC.autoBuyBuildings.push(building)
+				}
 			)
 			building.autoBuyUpgrade = obj.name;
 			return upgrade;
@@ -226,7 +233,43 @@ CFC.launch = function() {
 			price: Math.pow(10,59),
 			require: 'Cookies from below'
 		});
+
+		//Game Hooks
+		Game.registerHook('logic', function () {
+			if (Game.ascensionMode != 1 && Game.OnAscend == 0) {
+				let now = Date.now()
+				if (CFC.autoBuyNext == null) CFC.autoBuyNext = now + CFC.autoBuyTime * 1000
+				if (now >= CFC.autoBuyNext) {
+					CFC.autoBuyBuildings.forEach((building) => {
+						Game.Objects[building].buy(1)
+					});
+					CFC.autoBuyNext = now + CFC.autoBuyTime * 1000
+				}
+			}
+		});
+		Game.registerHook('reset', function(hardReset) {
+			if (hardReset) CFC.autoBuyBuildings = []
+		});
 	}
+
+    CFC.save = function() { // fuck
+		let saveFile = {
+            AutoBuy: []
+		}
+		CFC.autoBuyBuildings.forEach((building) => {
+			saveFile.AutoBuy.push(building)
+		})
+		return JSON.stringify(saveFile);
+	}
+
+	CFC.load = function(json) {
+        let saveFile = JSON.parse(json);
+		CFC.autoBuyBuildings = []
+		saveFile.AutoBuy.forEach((building) => {
+			CFC.autoBuyBuildings.push(building)
+		})
+	}
+
 	if (CCSE.ConfirmGameVersion(CFC.name, CFC.version, CFC.GameVersion)) Game.registerMod(CFC.name, CFC);
 	Game.Notify('Cookie Flavored Cookies', 'Version 1.0', [25, 12], 6);
 }
