@@ -49,28 +49,34 @@ CFC.launch = function() {
 		}
 
 		//Heavenly Upgrades
-		CCSE.NewHeavenlyUpgrade('Cookies from above', 'Contains an assortment of heaven-sent cookies.</b><q>The gods wanted you to try these.</q>', 555000000000000, [25, 12], -725, -1425, ['Box of pastries', 'Box of maybe cookies', 'Box of not cookies']);
-		CCSE.NewHeavenlyUpgrade('Cookies from below', 'Contains an assortment of disgusting cookies.</b><q>Do you really want to taste them?</q>', 555000000000000, [26, 12], -550, -1475, ['Box of pastries', 'Box of maybe cookies', 'Box of not cookies']);
+		CCSE.NewHeavenlyUpgrade('Cookies from above', 'Contains an assortment of heaven-sent cookies.</b>' + (EN?'<q>The gods wanted you to try these.</q>':''), 555000000000000, [25, 12], -725, -1425, ['Box of pastries', 'Box of maybe cookies', 'Box of not cookies']);
+		CCSE.NewHeavenlyUpgrade('Cookies from below', 'Contains an assortment of disgusting cookies.</b>' + (EN?'<q>Do you really want to taste them?</q>':''), 555000000000000, [26, 12], -550, -1475, ['Box of pastries', 'Box of maybe cookies', 'Box of not cookies']);
 		CFC.NewAutoBuyBuilding({building: 'Cursor', name: 'Cursor clicking cursors', q: 'textexttextexttextexttextext.'})
-		CFC.NewAutoBuyBuilding({building: 'Grandma', name: 'name 1', q: 'textexttextexttextexttextext.'})
-		CFC.NewAutoBuyBuilding({building: 'Farm', name: 'name 2', q: 'textexttextexttextexttextext.'})
-		CFC.NewAutoBuyBuilding({building: 'Mine', name: 'name 3', q: 'textexttextexttextexttextext.'})
+		CFC.NewAutoBuyBuilding({building: 'Grandma', name: 'Grandma\'s book of recipe', q: 'textexttextexttextexttextext.'})
+		CFC.NewAutoBuyBuilding({building: 'Farm', name: 'Essence farms', q: 'textexttextexttextexttextext.'})
+		CFC.NewAutoBuyBuilding({building: 'Mine', name: 'Never-ending mineshafts', q: 'You heard of a legend told by your miners about a cursed mineshaft that never stops but who let no one escape it. Dreadful, but a simple teleporting device seems to cancel the so-called curse.'})
 		CFC.NewAutoBuyBuilding({building: 'Factory', name: 'name 4', q: 'textexttextexttextexttextext.'})
 		CFC.NewAutoBuyBuilding({building: 'Bank', name: 'Economic paradox', q: 'You\'ve twisted the economy so efficiently that one cookie is now worth two cookies!.'})
-		CFC.NewAutoBuyBuilding({building: 'Temple', name: 'God of cookies', q: 'Why only exploit ancient temple? Why not worship deities and see if they respond back?.'})
+		CFC.NewAutoBuyBuilding({building: 'Temple', name: 'God of cookies', q: 'Why only exploit ancient temple? Why not worship deities and see if they respond back?'})
 		CFC.NewAutoBuyBuilding({building: 'Wizard tower', name: 'Cookienomicon', q: 'In the darkest of spell books, you learned the ability to spawn life itself. You quickly teached this spell to your wizards so that they can create more wizards.'})
-		CFC.NewAutoBuyBuilding({building: 'Shipment', name: 'name 7', q: 'textexttextexttextexttextext.'})
-		CFC.NewAutoBuyBuilding({building: 'Alchemy lab', name: 'name 8', q: 'textexttextexttextexttextext.'})
-		CFC.NewAutoBuyBuilding({building: 'Portal', name: 'The third portal', q: 'textexttextexttextexttextext.'})
-		CFC.NewAutoBuyBuilding({building: 'Time machine', name: 'Looping timelines', q: 'textexttextexttextexttextext.'})
-		CFC.NewAutoBuyBuilding({building: 'Antimatter condenser', name: 'Cookienium liquid', q: 'textexttextexttextexttextext.'})
+		CFC.NewAutoBuyBuilding({building: 'Shipment', name: 'Alcubierre drive', q: 'Shipments are not travelling space fast enough? Simply move space itself!'})
+		CFC.NewAutoBuyBuilding({building: 'Alchemy lab', name: 'Forbidden arcanes', q: 'textexttextexttextexttextext.'})
+		CFC.NewAutoBuyBuilding({building: 'Portal', name: 'The third portal', q: 'Finally! No more of that boring portal gun of yours, now\'s time for a triple portal gun!'})
+		CFC.NewAutoBuyBuilding({building: 'Time machine', name: 'Breaking causality', q: 'What?! No! Don\'t do that! This will have horrendous consequences! Would you want to erase yourself from time?!'})
+		CFC.NewAutoBuyBuilding({building: 'Antimatter condenser', name: 'Cookienium liquid', q: 'It seems that your antimatter condensers are creating a very strange byproduct, cookienium. This material properties could certainly be very helpful for enhancing other buildings.'})
 		CFC.NewAutoBuyBuilding({building: 'Prism', name: 'Light from nothing', q: 'While tinkering with one of your prism, you found out that you can convert darkness into light! You are litteraly creating light from nothing!'})
 		CFC.NewAutoBuyBuilding({building: 'Chancemaker', name: 'Sudden luck', q: 'Not only are you creating cookies out of sheer luck, you\'re also creating more Chancemakers!'})
 		CFC.NewAutoBuyBuilding({building: 'Fractal engine', name: 'Self-contained fractal engines', q: 'Do you know what happens when you put a fractal engine inside another one? Thank god it doesn\'t destroy the universe, or else whe would\'nt be here.'})
-		CFC.NewAutoBuyBuilding({building: 'Javascript console', name: 'Object.assign({}, building)', q: 'textexttextexttextexttextext.'})
-		CFC.NewAutoBuyBuilding({building: 'Idleverse', name: 'name 9', q: 'textexttextexttextexttextext.'})
-		CFC.NewAutoBuyBuilding({building: 'Cortex baker', name: 'name 10', q: 'textexttextexttextexttextext.'})
-		CFC.NewAutoBuyBuilding({building: 'You', name: 'Clone cloning themselves', q: 'textexttextexttextexttextext.'})
+		CFC.NewAutoBuyBuilding({building: 'Javascript console', name: '"while" statement', q: 'Be careful about "while" statements when coding with the fabric of reality, you don\'t want to trap the universe in an enclosed loop.'})
+		CFC.NewAutoBuyBuilding({building: 'Idleverse', name: 'Space between spaces', q: 'or In-Between, Superflow, The Bleed, whatever it\'s called, no one is in there so it\s all yours now!'})
+		CFC.NewAutoBuyBuilding({building: 'Cortex baker', name: 'Empathy', q: 'textexttextexttextexttextext.'})
+		CFC.NewAutoBuyBuilding({building: 'You', name: 'Clone cloning themselves', q: 'You\'ve teached your clones to clone themselves for more clones. Is it working? Yes! Is productivity off the charts? Absolutely! Are the clones getting more and more mutated? We won\'t answer that.'})
+		CCSE.NewHeavenlyUpgrade('Shopping Spree', 'Automatic purchase time is reduced to 8 seconds' + (EN?'<q>texttexttexttexttext</q>':''), Math.pow(50, 15), [0, 2, CFC.path+"/icons.png"], 750 - Math.sin((21)*0.23+2.3) * 600, 200 + Math.cos((21)*0.23+2.3) * 600, ['Clone cloning themselves'], function() { CFC.autoBuyTime = 8 })
+		CCSE.NewHeavenlyUpgrade('name 1', 'Automatic purchase time is reduced to 6 seconds' + (EN?'<q>texttexttexttexttext</q>':''), Math.pow(100, 15), [1, 2, CFC.path+"/icons.png"], 750 - Math.sin((21)*0.23+2.3) * 500, 200 + Math.cos((21)*0.23+2.3) * 500, ['Shopping Spree'], function() { CFC.autoBuyTime = 6 })
+		CCSE.NewHeavenlyUpgrade('Accelerating acceleration', 'Automatic purchase time is reduced to 4 seconds' + (EN?'<q>texttexttexttexttext</q>':''), Math.pow(250, 15), [2, 2, CFC.path+"/icons.png"], 750 - Math.sin((21)*0.23+2.3) * 400, 200 + Math.cos((21)*0.23+2.3) * 400, ['name 1'], function() { CFC.autoBuyTime = 4 })
+		CCSE.NewHeavenlyUpgrade('name 2', 'Automatic purchase time is reduced to 2 seconds' + (EN?'<q>texttexttexttexttext</q>':''), Math.pow(500, 15), [3, 2, CFC.path+"/icons.png"], 750 - Math.sin((21)*0.23+2.3) * 300, 200 + Math.cos((21)*0.23+2.3) * 300, ['Accelerating acceleration'], function() { CFC.autoBuyTime = 2 })
+		CCSE.NewHeavenlyUpgrade('name 3', 'Automatic purchase time is reduced to 1 seconds' + (EN?'<q>texttexttexttexttext</q>':''), Math.pow(1, 18), [4, 2, CFC.path+"/icons.png"], 750 - Math.sin((21)*0.23+2.3) * 200, 200 + Math.cos((21)*0.23+2.3) * 200, ['name 2'], function() { CFC.autoBuyTime = 1 })
+		CCSE.NewHeavenlyUpgrade('Universe overhaul', 'Buildings are purchased whenever possible' + (EN?'<q>texttexttexttexttext</q>':''), Math.pow(1.5, 18), [5, 2, CFC.path+"/icons.png"], 750 - Math.sin((21)*0.23+2.3) * 100, 200 + Math.cos((21)*0.23+2.3) * 100, ['name 3'], function() { CFC.autoBuyTime = 0 })
 
 		//Cookies Upgrade
 		Game.NewUpgradeCookie({
@@ -252,7 +258,7 @@ CFC.launch = function() {
 		});
 	}
 
-    CFC.save = function() { // fuck
+    CFC.save = function() { // fuck this is annoying
 		let saveFile = {
             AutoBuy: []
 		}
